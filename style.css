@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper .terrain .bounce {
+  background: linear-gradient(135deg, rgb(84, 2, 26), rgb(78, 177, 152));
+}
+
+.wrapper {
+  height: 100vh;
+}
+.wrapper .terrain {
+  margin: auto;
+  height: 50%;
+  width: 50%;
+  border-bottom: 5px solid green;
+  background-color: lightblue;
+  position: relative;
+}
+.wrapper .terrain .ball {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+}
+.wrapper .terrain .bounce {
+  animation-duration: 0.5s;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes bounce {
+  0% {
+    left: 50%;
+  }
+  1% {
+    width: 7rem;
+    height: 3rem;
+  }
+  3% {
+    width: 6rem;
+    height: 4rem;
+  }
+  6% {
+    width: 5rem;
+    height: 5rem;
+  }
+  100% {
+    left: 50%;
+    bottom: 50%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

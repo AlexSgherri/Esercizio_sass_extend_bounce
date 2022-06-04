@@ -1,0 +1,32 @@
+@mixin start-end($position-start, $position-end) {
+  animation-duration: 0.5s;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  @keyframes bounce {
+    0% {
+      left: calc($position-start + 50%);
+    }
+    1% {
+      width: 7rem;
+      height: 3rem;
+    }
+
+    3% {
+      width: 6rem;
+      height: 4rem;
+    }
+    6% {
+      width: $ball-size;
+      height: $ball-size;
+    }
+
+    50% {
+    }
+
+    100% {
+      left: calc($position-start + 50%);
+      bottom: $position-end;
+    }
+  }
+}

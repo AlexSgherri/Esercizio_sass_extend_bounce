@@ -1,0 +1,48 @@
+@import "animation";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$terrain-color: green;
+$object-color: red;
+$ball-size: 5rem;
+
+%bg-generator {
+  background: linear-gradient(
+    135deg,
+    rgb(random(255), random(255), random(255)),
+    rgb(random(255), random(255), random(255))
+  );
+}
+
+.wrapper {
+  height: 100vh;
+
+  .terrain {
+    margin: auto;
+    height: 50%;
+    width: 50%;
+    border-bottom: 5px solid $terrain-color;
+    background-color: lightblue;
+    position: relative;
+
+
+    .ball {
+      width: $ball-size;
+      height: $ball-size;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      left: 50%;
+      bottom: 0%;
+    }
+
+    .bounce {
+      @include start-end(0%, 50%);
+      @extend %bg-generator;
+    }
+  }
+}
